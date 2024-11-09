@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+
+    - name: deploying artifact to tomcat
+      copy:
+        src: /root/artifact/NETFLIX-1.2.2.war
+        dest: /root/tomcat/webapps
