@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn package'
             }
         }
         stage('Uploading Artifact to S3 for Backup') {
