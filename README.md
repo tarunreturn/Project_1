@@ -200,6 +200,15 @@ pipeline {
 ## 7  Run Ansible Playbook
 - **Purpose**: Remotely runs the Ansible playbook on the Ansible server to deploy the application.
 - Shell step: `ssh -o StrictHostKeyChecking=no root@172.31.87.52 'ansible-playbook /etc/ansible/deploy.yml'`
+  ### Ansible Playbook (`deploy.yml`)
+```yaml
+- hosts: all
+  tasks:
+    - name: Deploying artifact to Tomcat
+      copy:
+        src: /root/artifact/NETFLIX-1.2.2.war
+        dest: /root/tomcat/webapps
+```
 ## 8.   Post-Build Notifications
 - **Purpose**: After a successful or failed deployment, a message is sent to a Slack channel (#ci-cd) to notify the team.
     ```groovy
@@ -220,15 +229,6 @@ pipeline {
     }
   }
 
-### Ansible Playbook (`deploy.yml`)
-```yaml
-- hosts: all
-  tasks:
-    - name: Deploying artifact to Tomcat
-      copy:
-        src: /root/artifact/NETFLIX-1.2.2.war
-        dest: /root/tomcat/webapps
-```
 
 # OUTPUT
 ---
