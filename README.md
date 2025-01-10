@@ -192,9 +192,33 @@ pipeline {
   s3Upload {
     bucket: 'myartifact325',
     sourceFile: 'target/NETFLIX-1.2.2.war',
-    selectedRegion: 'us-east-1'
-}
-
+    selectedRegion: 'us-east-1
+    }
+## 6  Uploading Artifact to Ansible Server
+- **Purpose**: Securely transfers the .war file to the Ansible server using sshagent with predefined credentials.
+- Shell step: `scp -o StrictHostKeyChecking=no target/NETFLIX-1.2.2.war root@172.31.87.52:/root/artifact`
+## 7  Run Ansible Playbook
+- **Purpose**: Remotely runs the Ansible playbook on the Ansible server to deploy the application.
+- Shell step: `ssh -o StrictHostKeyChecking=no root@172.31.87.52 'ansible-playbook /etc/ansible/deploy.yml'`
+## 8.   Post-Build Notifications
+- **Purpose**: After a successful or failed deployment, a message is sent to a Slack channel (#ci-cd) to notify the team.
+    ```groovy
+  post {
+    success {
+        slackSend(
+            channel: '#ci-cd',
+            message: "✅ Build and deployment of NETFLIX 1.2.2 was successful.",
+            color: 'good'
+        )
+    }
+    failure {
+        slackSend(
+            channel: '#ci-cd',
+            message: "❌ Build or deployment of NETFLIX 1.2.2 failed.",
+            color: 'danger'
+        )
+    }
+  }
 
 ### Ansible Playbook (`deploy.yml`)
 ```yaml
