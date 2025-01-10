@@ -180,12 +180,15 @@ pipeline {
 ## 2. Maven Build Stage
 - **Purpose**: Compiles the Java application
 - Shell step: `sh 'mvn compile'`
+  
 ## 3.  Maven Test Stage
 - **Purpose**: Runs unit tests to validate code changes.
 - Shell step: `sh 'mvn test'`
+  
 ## 4.  Artifact Stage
 - **Purpose**: Packages the application into a .war file for deployment
 - Shell step: `sh 'mvn package'`
+  
 ## 5.  Uploading Artifact to S3 for Backup
 - **Purpose**: Uploads the .war artifact to an S3 bucket (myartifact325), allowing backups and easy access to artifacts.
     ```groovy
@@ -194,12 +197,15 @@ pipeline {
     sourceFile: 'target/NETFLIX-1.2.2.war',
     selectedRegion: 'us-east-1
     }
+    
 ## 6  Uploading Artifact to Ansible Server
 - **Purpose**: Securely transfers the .war file to the Ansible server using sshagent with predefined credentials.
 - Shell step: `scp -o StrictHostKeyChecking=no target/NETFLIX-1.2.2.war root@172.31.87.52:/root/artifact`
+  
 ## 7  Run Ansible Playbook
 - **Purpose**: Remotely runs the Ansible playbook on the Ansible server to deploy the application.
 - Shell step: `ssh -o StrictHostKeyChecking=no root@172.31.87.52 'ansible-playbook /etc/ansible/deploy.yml'`
+  
   ### Ansible Playbook (`deploy.yml`)
 ```yaml
 - hosts: all
@@ -228,7 +234,6 @@ pipeline {
         )
     }
   }
-
 
 # OUTPUT
 ---
