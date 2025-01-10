@@ -177,6 +177,25 @@ pipeline {
   ```groovy
   git branch: '$branch', url: 'https://github.com/tarunreturn/jenkins-java-project.git'
 
+## 2. Maven Build Stage
+- **Purpose**: Compiles the Java application
+- Shell step: `sh 'mvn compile'`
+## 3.  Maven Test Stage
+- **Purpose**: Runs unit tests to validate code changes.
+- Shell step: `sh 'mvn test'`
+## 4.  Artifact Stage
+- **Purpose**: Packages the application into a .war file for deployment
+- Shell step: `sh 'mvn package'`
+## 5.  Uploading Artifact to S3 for Backup
+- **Purpose**: Uploads the .war artifact to an S3 bucket (myartifact325), allowing backups and easy access to artifacts.
+    ```groovy
+  s3Upload {
+    bucket: 'myartifact325',
+    sourceFile: 'target/NETFLIX-1.2.2.war',
+    selectedRegion: 'us-east-1'
+}
+
+
 ### Ansible Playbook (`deploy.yml`)
 ```yaml
 - hosts: all
