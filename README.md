@@ -166,7 +166,16 @@ pipeline {
     }
 }
 ```
+# DEATAIL EXPLAINATION OF PIPELINE CODE :
 
+## 1. Checkout Stage
+
+- **Purpose**: Pulls the project code from GitHub.
+- **Details**:
+  - Utilizes a parameterized branch variable to allow building from different branches.
+- **groovy**:
+  ```groovy
+  git branch: '$branch', url: 'https://github.com/tarunreturn/jenkins-java-project.git'
 
 ### Ansible Playbook (`deploy.yml`)
 ```yaml
