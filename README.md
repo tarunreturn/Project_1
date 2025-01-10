@@ -90,39 +90,17 @@ variable "instance_names" {
 - **Generate Token**: Obtain a token via Incoming Webhook or Slack App.
 - **Slack Plugin**: Configure Jenkins to send notifications.
 
-# Jenkins Pipeline Stages for Automated Deployment
+# Jenkins Pipeline Stages
 
-This Jenkins pipeline automates the deployment process of a Java application using a series of defined stages. Below is an overview of the pipeline and its functionalities.
+The pipeline automates the deployment process in the following stages:
 
-## Pipeline Stages
-
-### 1. **Checkout Stage**
-- **Purpose:** Pulls the latest code from the GitHub repository.
-- **Description:** Ensures that the pipeline has access to the most recent codebase.
-
-### 2. **Maven Build Stage**
-- **Purpose:** Compiles the Java application.
-- **Description:** Leverages Maven to build the source code into a runnable application.
-
-### 3. **Maven Test Stage**
-- **Purpose:** Runs unit tests to validate code changes.
-- **Description:** Ensures that the application is stable and functional by executing automated test cases.
-
-### 4. **Artifact Stage**
-- **Purpose:** Packages the application into a `.war` file for deployment.
-- **Description:** Prepares the application artifact that will be deployed to the servers.
-
-### 5. **Uploading Artifact to S3 for Backup**
-- **Purpose:** Uploads the `.war` file to an S3 bucket for backup purposes.
-- **Description:** Stores the artifact in the `myartifact325` S3 bucket to maintain a versioned backup of the deployment artifact.
-
-### 6. **Uploading Artifact to Ansible Server**
-- **Purpose:** Transfers the `.war` file to the Ansible server.
-- **Description:** Ensures the artifact is available on the Ansible server for deployment.
-
-### 7. **Run Ansible Playbook**
-- **Purpose:** Deploys the application to Tomcat servers.
-- **Description:** Executes an Ansible playbook to automate the deployment process across multiple Tomcat servers.
+1. Checkout Stage: Pulls code from GitHub.
+2. Maven Build Stage: Compiles the Java application.
+3. Maven Test Stage: Runs unit tests to validate code changes.
+4. Artifact Stage: Packages the application into a .war file for deployment.
+5. Uploading Artifact to S3 for Backup: Uploads the .war file to an S3 bucket (myartifact325).
+6. Uploading Artifact to Ansible Server: Transfers the .war file to the Ansible server.
+7. Run Ansible Playbook: Deploys the application by running the Ansible playbook on the Tomcat servers.
 
 
 ### Pipeline Code
@@ -189,15 +167,6 @@ pipeline {
 }
 ```
 
-### Explanation of Pipeline Stages
-1. **Checkout Stage**: Pulls code from GitHub.
-2. **Maven Build Stage**: Compiles the application.
-3. **Maven Test Stage**: Runs unit tests.
-4. **Artifact Stage**: Packages the application into a `.war` file.
-5. **Uploading Artifact to S3**: Uploads the `.war` file to an S3 bucket.
-6. **Uploading Artifact to Ansible Server**: Transfers the `.war` file to the Ansible server.
-7. **Run Ansible Playbook**: Deploys the application using Ansible.
-8. **Post-Build Notifications**: Sends success/failure notifications to Slack.
 
 ### Ansible Playbook (`deploy.yml`)
 ```yaml
@@ -209,10 +178,7 @@ pipeline {
         dest: /root/tomcat/webapps
 ```
 
-# CI/CD Pipeline Overview
-
-This document provides an overview of the CI/CD pipeline setup, showcasing various outputs related to server creation, deployment, and monitoring.
-
+# OUTPUT
 ---
 
 ### **Server Creation**
