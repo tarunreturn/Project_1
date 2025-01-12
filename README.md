@@ -3,8 +3,6 @@
 ## Objective
 Deploy a Netflix-like application with an automated CI/CD pipeline using Jenkins, Ansible, S3 for artifact backup, and HCP Terraform for server creation. The deployment simulates a high-availability application scenario, aiming to streamline build, testing, and deployment for scalable operations.
 
-<img src="https://i.imghippo.com/files/x4056TWw.png" alt="" border="0">
-
 ## Components and Tools
 - **Jenkins**: CI/CD tool to automate the build, test, and deployment process.
 - **Ansible**: Configuration management tool for automating application deployment.
