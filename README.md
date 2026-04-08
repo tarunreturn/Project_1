@@ -250,38 +250,36 @@ pipeline {
 ---
 
 ### **Jenkins Build Output**
-![Jenkins Build Output](https://i.imghippo.com/files/hEb7019TI.png)
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/4.png" width="800"/> 
 
 ---
 
 ### **Artifact Upload to S3 Bucket**
-![Artifact Upload](https://i.imghippo.com/files/KOjN9407pv.png)
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/5.png" width="800"/> 
 
 ---
 
 ### **Tomcat Servers Output**
-![Tomcat Server 1](https://i.imghippo.com/files/tkP6445Ss.png)  
-![Tomcat Server 2](https://i.imghippo.com/files/XEYf9843eas.png)
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/6.png" width="800"/> 
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/7.png" width="800"/> 
 ---
 
 ### **Slack Notification**
-![Slack Notification](https://i.imghippo.com/files/rPXr7175pI.png)
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/8.png" width="800"/> 
 
 ---
 
 ### **Jenkins Monitoring Dashboard**
-![Jenkins Monitoring Dashboard](https://i.imghippo.com/files/Sxkk3232Gyc.png)
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/9.png" width="800"/> 
 ---
 
 ### **Tomcat_1 Server Monitoring Dashboard**
-![Tomcat_1 Monitoring Dashboard](https://i.imghippo.com/files/ZMT8037Xig.png)
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/10.png" width="800"/> 
 
 ---
 
 ### **Tomcat_2 Server Monitoring Dashboard**
-![Tomcat_2 Monitoring Dashboard](https://i.imghippo.com/files/WwL7865yA.png)
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/11.png" width="800"/> 
 
 ---
 
