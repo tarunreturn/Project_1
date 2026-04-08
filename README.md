@@ -246,8 +246,7 @@ pipeline {
 ---
 
 ### **Ansible Worker Nodes**
-![Ansible Worker Nodes](https://i.imghippo.com/files/KYuU8342QSs.png)
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/3.png" width="800"/> 
 ---
 
 ### **Jenkins Build Output**
