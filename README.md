@@ -241,7 +241,7 @@ pipeline {
 
 ### **Server Creation**
 <img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/1.png" width="800"/> 
-![Server Creation Image 2](https://i.imghippo.com/files/hfzS7105jM.png)
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_1/OUTPUT/2.png" width="800"/> 
 
 ---
 
